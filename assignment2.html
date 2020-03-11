@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-</head>
-<body>
-    <table border='1'>
-        <tr>
-            <th>first_name</th>
-            <th>last_name</th>
-            <th>DOB</th>
-        </tr>
-        <tr>
-            <td id='first'></td>
-            <td id='last'></td>
-            <td id='dat'></td>
-        </tr>
+  <head> </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>DOB</th>
+      </tr>
+      <tr>
+        <td id="first"></td>
+        <td id="last"></td>
+        <td id="dat"></td>
+      </tr>
     </table>
     <script>
-    let person = [
-        {'first_name':'rishikesh'},
-        {'last_name':'kumar'},
-        {'DOB':'july 9 1996'}
-    ]
-        let fist = document.getElementById('first').textContent=person[0].first_name;
-        let last = document.getElementById('last').textContent=person[1].last_name;
-        let dat = document.getElementById('dat').textContent=person[2].DOB;
-
-
+      let person = [
+        { first_name: "rishikesh" },
+        { last_name: "kumar" },
+        { DOB: "july 9 1996" }
+      ];
+      let fist = (document.getElementById("first").textContent =
+        person[0].first_name);
+      let last = (document.getElementById("last").textContent =
+        person[1].last_name);
+      let dat = (document.getElementById("dat").textContent = person[2].DOB);
     </script>
-</body>
+  </body>
 </html>
