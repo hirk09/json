@@ -2,78 +2,40 @@
 <html lang="en">
   <head> </head>
   <body>
-    <table border="1">
+    <table border="1" id='tabl'>
       <tr>
         <th>first_name</th>
         <th>last_name</th>
         <th>DOB</th>
       </tr>
-      <tr>
-        <td id="first1"></td>
-        <td id="last1"></td>
-        <td id="dat1"></td>
-      </tr>
-      <tr>
-        <td id="first2"></td>
-        <td id="last2"></td>
-        <td id="dat2"></td>
-      </tr>
-      <tr>
-        <td id="first3"></td>
-        <td id="last3"></td>
-        <td id="dat3"></td>
-      </tr>
-      <tr>
-        <td id="first4"></td>
-        <td id="last4"></td>
-        <td id="dat4"></td>
-      </tr>
     </table>
+
     <script>
-      let obj ={ 
-          'person1':[
-        { 'first_name': "rishikesh" },
-        { 'last_name': "kumar" },
-        { 'DOB': "july 9 1996" }
-      ],
-      'person2':[
-        { 'first_name': "rahul" },
-        { 'last_name': "kumar" },
-        { 'DOB': "july 2 1996" }
-      ],
-      'person3':[
-        { 'first_name': "shubham" },
-        { 'last_name': "kumar" },
-        { 'DOB': "july 3 1996" }
-      ],
-      'person4':[
-        { 'first_name': "ashish" },
-        { 'last_name': "kumar" },
-        { 'DOB': "july 4 1996" }
-      ]}
-      let fist1 = (document.getElementById("first1").textContent =
-        obj.person1[0].first_name);
-      let last1 = (document.getElementById("last1").textContent =
-        obj.person1[1].last_name);
-      let dat1 = (document.getElementById("dat1").textContent = obj.person1[2].DOB);
-
-      let fis2 = (document.getElementById("first2").textContent =
-        obj.person2[0].first_name);
-      let last2 = (document.getElementById("last2").textContent =
-        obj.person2[1].last_name);
-      let dat2 = (document.getElementById("dat2").textContent = obj.person2[2].DOB);
-
-      let fist3 = (document.getElementById("first3").textContent =
-        obj.person3[0].first_name);
-      let last3 = (document.getElementById("last3").textContent =
-        obj.person3[1].last_name);
-      let dat3 = (document.getElementById("dat3").textContent = obj.person3[2].DOB);
-
-      let fist4 = (document.getElementById("first4").textContent =
-        obj.person4[0].first_name);
-      let last4 = (document.getElementById("last4").textContent =
-        obj.person4[1].last_name);
-      let dat4 = (document.getElementById("dat4").textContent = obj.person4[2].DOB);
+      let person= [
+          {'first_name': "rishi",'last_name':"kumar",'DOB': "13"},
+          {'first_name': "ravi",'last_name':"kumar",'DOB': "12"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "rishi",'last_name':"kumar",'DOB': "13"},
+          {'first_name': "ravi",'last_name':"kumar",'DOB': "12"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"}
+          ]
+          let person1,person2,person3,person4
+       for(i=0;i<person.length;i++){
+           person1= document.getElementById('tabl');
+           let row=document.createElement('tr');
+            let data=document.createElement('td');
+            let data_s=document.createElement('td');
+            let data_t=document.createElement('td');
+            data.innerText=person[i].first_name;
+            data_s.innerText=person[i].last_name;
+            data_t.innerText=person[i].DOB;
+            row.appendChild(data);
+            row.appendChild(data_s);
+            row.appendChild(data_t);
+            person1.appendChild(row);
+       }  
     </script>
   </body>
 </html>
