@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <table border="1" id="tabl">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Massege</th>
+        <th>Date</th>
+      </tr>
+    </table>
+
+    <script>
+      let a = 1,
+        b = 5;
+      setInterval(function() {
+        fetch("https://jsonplaceholder.typicode.com/comments")
+          .then(response => {
+            return response.json();
+          })
+          .then(json => {
+            let person1;
+            let newjsn = json.splice((a - 1) * b, b);
+            for (i = 0; i < newjsn.length; i++) {
+              person1 = document.getElementById("tabl");
+              let row = document.createElement("tr");
+              let data = document.createElement("td");
+              let data_s = document.createElement("td");
+              let data_t = document.createElement("td");
+              let data_d = document.createElement("td");
+              data.innerText = newjsn[i].name;
+              data_s.innerText = newjsn[i].email;
+              data_t.innerText = newjsn[i].body;
+              data_d.innerText = newjsn[i].id;
+              row.appendChild(data);
+              row.appendChild(data_s);
+              row.appendChild(data_t);
+              row.appendChild(data_d);
+              person1.appendChild(row);
+            }
+            a++;
+          })
+          .catch(error => error);
+      }, 1000);
+    </script>
+  </body>
+</html>
