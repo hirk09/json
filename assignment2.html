@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <table border="1" id='tabl'>
+      <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>DOB</th>
+      </tr>
+    </table>
+
+    <script>
+      let person= [
+          {'first_name': "rishi",'last_name':"kumar",'DOB': "13"},
+          {'first_name': "ravi",'last_name':"kumar",'DOB': "12"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "rishi",'last_name':"kumar",'DOB': "13"},
+          {'first_name': "ravi",'last_name':"kumar",'DOB': "12"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"},
+          {'first_name': "mohan",'last_name':"kumar",'DOB': "11"}
+          ]
+          let person1,person2,person3,person4
+       for(i=0;i<person.length;i++){
+           person1= document.getElementById('tabl');
+           let row=document.createElement('tr');
+            let data=document.createElement('td');
+            let data_s=document.createElement('td');
+            let data_t=document.createElement('td');
+            data.innerText=person[i].first_name;
+            data_s.innerText=person[i].last_name;
+            data_t.innerText=person[i].DOB;
+            row.appendChild(data);
+            row.appendChild(data_s);
+            row.appendChild(data_t);
+            person1.appendChild(row);
+       }  
+    </script>
+  </body>
+</html>
