@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <label>Name: </label> <input type="text" id="myName" />
+    <label>Email: </label> <input type="text" id="myEmail" /><br />
+    <label>Massege: </label> <input type="text" id="myMassege" />
+    <label>Date: </label> <input type="date" id="myDate" />
+    <button onclick="newElement()">submit</button>
+    <table border="1" id="tabl">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Massege</th>
+        <th>Date</th>
+      </tr>
+    </table>
+    <script>
+      function newElement() {
+        if (
+          document.getElementById("myName").value === "" ||
+          document.getElementById("myEmail").value === "" ||
+          document.getElementById("myMassege").value === "" ||
+          document.getElementById("myDate").value === ""
+        ) {
+          alert("You must write something!");
+        } else {
+          person1 = document.getElementById("tabl");
+          let row = document.createElement("tr");
+          let data = document.createElement("td");
+          let data_s = document.createElement("td");
+          let data_t = document.createElement("td");
+          let data_d = document.createElement("td");
+          data.innerText = document.getElementById("myName").value;
+          data_s.innerText = document.getElementById("myEmail").value;
+          data_t.innerText = document.getElementById("myMassege").value;
+          data_d.innerText = document.getElementById("myDate").value;
+          row.appendChild(data);
+          row.appendChild(data_s);
+          row.appendChild(data_t);
+          row.appendChild(data_d);
+          person1.appendChild(row);
+          document.getElementById("myName").value = "";
+          document.getElementById("myEmail").value = "";
+          document.getElementById("myMassege").value = "";
+          document.getElementById("myDate").value = "";
+        }
+      }
+    </script>
+  </body>
+</html>
